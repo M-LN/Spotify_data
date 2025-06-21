@@ -51,6 +51,26 @@ To use the Spotify API features, you'll need:
    SPOTIFY_CLIENT_ID=your_client_id_here
    SPOTIFY_CLIENT_SECRET=your_client_secret_here
    ```
+   
+### Security Note
+
+**IMPORTANT**: For security reasons:
+
+- **NEVER** commit your `.env` file containing real API credentials to GitHub
+- A `.gitignore` file is already set up to exclude the `.env` file
+- Use the provided `.env.example` as a template, but create your own `.env` file with actual credentials
+- When sharing code or making pull requests, always ensure credentials are not exposed
+- If you accidentally commit credentials to a public repository, revoke them immediately and generate new ones
+
+The repository includes:
+- `.env.example` - A template showing required environment variables (safe to commit)
+- `.gitignore` - Configuration to prevent sensitive files from being committed
+
+When cloning this repository:
+1. Copy `.env.example` to a new file called `.env`
+2. Add your own Spotify API credentials to the `.env` file
+3. Never share or commit your actual `.env` file
+
 4. Install additional packages:
    ```
    pip install python-dotenv requests spotipy
