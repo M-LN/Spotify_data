@@ -54,17 +54,23 @@ To use the Spotify API features, you'll need:
    
 ### Security Note
 
-**IMPORTANT**: For security reasons:
+**CRITICAL SECURITY INFORMATION**:
 
 - **NEVER** commit your `.env` file containing real API credentials to GitHub
 - A `.gitignore` file is already set up to exclude the `.env` file
 - Use the provided `.env.example` as a template, but create your own `.env` file with actual credentials
 - When sharing code or making pull requests, always ensure credentials are not exposed
-- If you accidentally commit credentials to a public repository, revoke them immediately and generate new ones
+
+**If you accidentally commit credentials to a public repository:**
+1. **Immediately revoke the exposed credentials** - They should be considered compromised
+2. Generate new credentials from the Spotify Developer Dashboard
+3. Follow the instructions in `DETAILED_CREDENTIAL_CLEANUP.md` to remove sensitive data from Git history
+4. Force push the cleaned repository to overwrite the history containing credentials
 
 The repository includes:
 - `.env.example` - A template showing required environment variables (safe to commit)
 - `.gitignore` - Configuration to prevent sensitive files from being committed
+- `DETAILED_CREDENTIAL_CLEANUP.md` - Instructions for removing sensitive data from Git history
 
 When cloning this repository:
 1. Copy `.env.example` to a new file called `.env`
